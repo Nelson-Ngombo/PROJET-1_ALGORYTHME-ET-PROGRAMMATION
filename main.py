@@ -30,4 +30,16 @@ class cercle(forme_geometrique):
     def perimetre(self):
         return 2*pi*self.rayon
     
-# ajoute la classe triangle 
+class triangle(forme_geometrique):
+    def __init__(self,hauteur,cote1,cote2,cote3):
+        self.hauteur=hauteur
+        self.cote1=cote1 
+        self.cote2=cote2
+        self.cote3=cote3
+    def surface(self):
+        resultat=self.hauteur*self.cote1/2
+        return resultat
+    def perimetre(self):
+        return self.cote1+self.cote2+self.cote3
+
+    #Ajoute la classe carre
