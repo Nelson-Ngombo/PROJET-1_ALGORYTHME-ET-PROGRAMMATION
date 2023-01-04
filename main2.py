@@ -34,3 +34,13 @@ class triangle:
     
     def perimetre(self):
         return (self.cote1+self.cote2+self.cote3)
+class carre:
+    def __init__(self,cote):
+        self.cote=cote
+        
+        
+    def surface(self):
+        return self.cote**2
+    
+    def perimetre(self):
+        return self.cote*4
