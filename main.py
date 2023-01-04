@@ -42,4 +42,20 @@ class triangle(forme_geometrique):
     def perimetre(self):
         return self.cote1+self.cote2+self.cote3
 
-    #Ajoute la classe carre
+class carre(rectangle):
+    def __init__(self,hauteur):        
+        self.hauteur=hauteur           
+    def surface(self):
+        return self.hauteur**2 
+    def perimetre(self):
+        return self.hauteur*4
+class triangle_rectangle(triangle):
+    def __init__(self, hauteur, cote1,hypotenus):
+        self.hauteur=hauteur
+        self.cote1=cote1
+        self.hypotenus=hypotenus
+    def surface(self):
+        return self.cote1*self.hauteur/2
+    def perimetre(self):
+        return self.cote1+self.hauteur+self.hypotenus
+    # fin du programme
