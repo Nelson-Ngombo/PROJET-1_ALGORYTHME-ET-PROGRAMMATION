@@ -27,7 +27,7 @@ class triangle:
         self.haut=haut
         self.cote1=cote1
         self.cote2=cote2
-        self.cote2=cote2
+        self.cote3=cote3
 
     def surface(self):
         return self.haut*self.cote1/2
