@@ -44,3 +44,19 @@ class carre:
     
     def perimetre(self):
         return self.cote*4
+    
+    
+#ajout de la class triangle rectangle
+
+class triangleRectangle:
+    def __init__(self,haut,cote1,hypotenus):
+        self.haut=haut
+        self.cote1=cote1
+        self.hypotenus=hypotenus
+        
+
+    def surface(self):
+        return self.haut*self.cote1/2
+    
+    def perimetre(self):
+        return (self.cote1+self.haut+self.hypotenus)
