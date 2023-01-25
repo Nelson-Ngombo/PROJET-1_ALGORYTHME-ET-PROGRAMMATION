@@ -1,5 +1,4 @@
-
-import travail_pratique_d_algo_python_PROJET_1 as tp
+import main as tp
 import unittest
 import math
 class testDuModuleFormGeom(unittest.TestCase):
@@ -63,8 +62,3 @@ class testDuModuleFormGeom(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-    
-    
-    
-    
-    
