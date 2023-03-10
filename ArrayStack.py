@@ -1,34 +1,46 @@
-class ArrayStack(object):
-
-    def __init__(self, iterable=None):
-        """Initialize this stack and push the given items, if any."""
-        self.list = list() # Initialize a list (Python's built-in dynamic array) to store the items
-        if iterable is not None:
-            for item in iterable:
-                self.push(item)
+class ArrayStack:
+    """LIFO stack implementation using a python list as underlying storage"""
     
-    def push(self, item):
-        """"Insert given item on top of stack
-        Running time: O(1) unless reached maximum array size, then exceptionally O(n)"""
-        self.list.append(item)
-
-    def peek(self):
-        """Return the item on the top of this stack without removing it,
-        or None if this stack is empty."""
-        last_item_idx = len(self.list) - 1
-        return None if last_item_idx < 0 else self.list[last_item_idx]
+    def __init__(self):
+        """create an empty"""
+        self._data=[]
+    def __len__(self):
+        """Return the number of elements in the stack"""
+        return len(self._data)
+    
+    def is_empty(self):
+        """Return True if the stack is empty"""
+        return len(self._data)==0
+    
+    def push(self,e):
+        """Return but not remove the element at the top of the stack"""
+        self._data.append(e)
+        
+    def top(self):
+        """Return (but not remove) the element at the top of the stack.
+        Raise Empty Exception if the stack is empty"""
+        if self.is_empty():
+            raise Empty('Stack is empty')
+        return self._data[-1]
+    
+    def reverse_file(self,filename):
+        S=ArrayStack()
+        original=open(filename)
+        for line in original:
+            S.push(line.rstrip('\n'))
+        original.close()
     
     def pop(self):
-        """Remove and return top item, if any, or raise ValueError if empty
-        Running time: O(1) since only removing last item, all other items stay where they are"""
-        if self.peek() == None:
-            raise ValueError("list is empty")
-        else:
-            return self.list.pop()
-a=ArrayStack()
-a.push(1)
-a.push(2)
-a.peek()
-a
+        """Remove and return the element from the top of the LIFO"""
+        if self.is_empty():
+            raise Empty('Stack is empty')
+        return self._data.pop()
 
-
+        #now we overwrite with content in LIFO order
+        output=open(filename,'w')
+        while not S.is_empty():
+            output.write(S.pop() + '\n')
+        output.close()
+        return
+    def somme(self,a,b):
+        print(a+b)
